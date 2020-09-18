@@ -1,0 +1,40 @@
+//TASK TO DO:
+
+    //Welcome the player
+        //Set message welcome
+
+    //Ask the difficulty level and show the choice bewtween difficulty level
+        //Set message please choose one difficulty between these 5    
+        //show the number of tries and show the extended number
+            //VERY EASY, INFINITE NUMBER OF TRIES, 1 TO 10
+            //EASY, 5 TRIES, 1 TO 10
+            //MEDIUM, 5 TRIES, 1 TO 100
+            //HARD, 8 TRIES, 1 TO 500
+            //VERY HARD, 9 TRIES, 1 TO 1000
+
+    //Set a random number depending on the difficulty level AND SHOW THE NUMBER OF TRIES LEFT
+        //IF VERY EASY BETWEEN 1 AND 10
+        //ELSE IF EASY BETWEEN 1 TO 10
+        //ELSE IF MEDIUM 1 TO 100
+        //ELSE IF HARD 1 TO 500
+        //ELSE IF VERY HARD 1 TO 1000
+        //END IF
+
+    //Ask the player to start guessing
+        //Set message Start guessing
+
+        //EVERY MISSES TRIES SET THE THE MESSAGE IF THE NUMBER TO GUESS IS GREATER THAN OR LESS THAN
+
+        //IF THE PLAYER GUESS THE RIGHT NUMBER 
+            //End the game
+            //set message "Congraluation you guessed the right number"
+            //Ask if the player wanna replay if yes reset the game if no end the game
+
+    //IF THE PLAYER DID NOT GUESS THE RIGHT NUMBER SHOW TRY AGAIN AND SHOW THE RIGHT NUMBER RESET OR END THE game
+
+//TASK TO DO//
+
+
+
+
+
