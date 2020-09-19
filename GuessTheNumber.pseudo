@@ -44,7 +44,7 @@
             SEQUENCE
             Set message "Welcome Player"
             Set number of tries to 0
-            Set My random number
+            Set My random number to UNDEFINIED
             Set the level difficulty
         )
 
@@ -62,5 +62,46 @@
             UNTIL the player chose the difficulty level
         )
 
-    //Playing the game        
+    //Playing the game
+
+        SetTheGameWhilePlaying = (
+            IF difficulty level = Very Easy
+                Set number of tries TO infinity
+                Set my random number BETWEEN 1 AND 10
+            ELSE IF difficulty level = Easy
+                Set number of tries TO 5 
+                Set my random number BETWEEN 1 AND 10
+            ELSE IF difficulty level = Medium
+                Set number of tries TO 5
+                set my random number BETWEEN 1 AND 100
+            ELSE IF difficulty level = Hard
+                Set number of tries TO 8
+                Set my random number BETWEEN 1 AND 500
+            ELSE IF difficulty level = Very Hard
+                Set number of tries TO 9
+                Set my random number BETWEEN 1 AND 1000
+            ENDIF  
+            Set message "Start Guessing"
+            IF the player guess the right number THEN 
+                Set message "Congraluation you have win!!!"
+                End the game 
+            ELSE 
+                FOR every misses tries
+                    Set message "Wrong Number"
+                    Set message that SHOW if the random number is GREATER OR LESS than the number that the player guess
+                    Remove 1 to the number of tries 
+                SHOW 
+                    Set message "Try Again"
+                    The random number        
+            ENDIF 
+            SHOW
+                Restart button
+                IF the player click on the restart button THEN
+                    Reset the game
+                 ELSE
+                    End the game
+                ENDIF          
+
+        )   
+//PSEUDO CODE     
 
