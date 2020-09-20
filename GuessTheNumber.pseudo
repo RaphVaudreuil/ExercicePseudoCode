@@ -38,20 +38,17 @@
 
 //PSEUDO CODE
 
-    //First step of the game
 
-        SetTheGameBeforePlaying = (
+        SEQUENCE SetTheGameBeforePlaying
             DISPLAY "Welcome Player"
             Set number of tries to 0
-            Set My random number to UNDEFINIED
-            Set the level difficulty
-        )
+            Set My random number between 1 AND limit
+        ENDSEQUENCE
 
-    //Selection of a difficulty level
 
-        SetTheDifficultyLevel = (
+        SEQUENCE DifficultyLevel
             Repeat 
-                Set message "Please chose one difficulty level between these 5"
+                DISPLAY "Please chose one difficulty level between these 5"
                 Show the difficulty level 
                     Very Easy EQUAL Infinite Number Of Tries EQUAL Extended Number 1 TO 10
                     Easy EQUAL 5 tries EQUAL Extended Number 1 TO 10
@@ -59,11 +56,10 @@
                     Hard EQUAL 8 tries EQUAL Extended Number 1 TO 500
                     Very Hard EQUAL 9 tries EQUAL Extended Number 1 TO 1000
             UNTIL the player chose the difficulty level
-        )
+        ENDSEQUENCE
+        
 
-    //Playing the game
-
-        SetTheGameWhilePlaying = (
+        SEQUENCE SetTheGameWhilePlaying
             CASE
                 difficulty level = Very Easy
                     Set number of tries TO infinity
@@ -97,11 +93,11 @@
             SHOW
                 Restart button
                 IF the player click on the restart button THEN
-                    Reset the game
+                    Restart the game
                  ELSE
                     End the game
                 ENDIF          
 
-        )   
+        ENDSEQUENCE  
 //PSEUDO CODE     
 
