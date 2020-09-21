@@ -105,7 +105,7 @@
 
 
 
-
+//RIGHT WAY TO DO PSEUDOCODE//
 
 SEQUENCE start_guessing USING random_number AND max_tries
     SET guess TO 0
@@ -131,7 +131,34 @@ SEQUENCE start_guessing USING random_number AND max_tries
         ELSE
             BREAK
     ENDWHILE
-    SET answer_found TO TRUE IF guess IS EQUAL TO random_number      
+    SET answer_found TO TRUE IF guess IS EQUAL TO random_number
+ENDSEQUENCE
+
+SEQUENCE new_game USING limit AND max_tries
+    SET random_number TO random BETWEEN 1 AND limit
+    CALL start_guessing WITH random_number AND max_tries RETURNING answer_found
+    RETURN random_number AND answer_found
+ENDSEQUENCE
+
+SEQUENCE play_game WITH difficulty_level
+    CASE difficulty_level OF 
+        VeryEasy :
+            SET number_tries TO infinity
+            SET limit TO 10
+        Easy :
+            SET number_tries TO 5
+            SET limit TO 10
+        Medium :
+            SET number_tries TO 5
+            SET limit TO 100
+        Hard : 
+            SET number_tries TO 8
+            SET limit TO 500
+        VeryHard :
+            SET number_tries TO 9
+            SET limit TO 1000
+    ENDCASE   
+
 
 
     
