@@ -1,10 +1,9 @@
 //TASK TO DO:
 
     //Welcome the player
-        //Set message welcome
+        
 
-    //Ask the difficulty level and show the choice bewtween difficulty level
-        //Set message please choose one difficulty between these 5    
+    //Ask the difficulty level and show the choice bewtween difficulty level   
         //show the number of tries and show the extended number
             //VERY EASY, INFINITE NUMBER OF TRIES, 1 TO 10
             //EASY, 5 TRIES, 1 TO 10
@@ -21,13 +20,12 @@
         //END IF
 
     //Ask the player to start guessing
-        //Set message Start guessing
+        
 
         //EVERY MISSES TRIES SET THE THE MESSAGE IF THE NUMBER TO GUESS IS GREATER THAN OR LESS THAN
 
         //IF THE PLAYER GUESS THE RIGHT NUMBER 
             //End the game
-            //set message "Congraluation you guessed the right number"
             //Ask if the player wanna replay if yes reset the game if no end the game
 
     //IF THE PLAYER DID NOT GUESS THE RIGHT NUMBER SHOW TRY AGAIN AND SHOW THE RIGHT NUMBER RESET OR END THE game
@@ -57,7 +55,7 @@
                     Very Hard EQUAL 9 tries EQUAL Extended Number 1 TO 1000
             UNTIL the player chose the difficulty level
         ENDSEQUENCE
-        
+
 
         SEQUENCE SetTheGameWhilePlaying
             CASE
@@ -76,7 +74,8 @@
                 difficulty level = Very Hard
                     Set number of tries TO 9
                     Set my random number BETWEEN 1 AND 1000
-            ENDCASE  
+            ENDCASE
+
             DISPLAY "Start Guessing"
             IF the player guess the right number THEN 
                 DISPLAY "Congraluation you have win!!!"
@@ -89,7 +88,8 @@
                 SHOW 
                     DISPLAY "Try Again"
                     The random number        
-            ENDIF 
+            ENDIF
+
             SHOW
                 Restart button
                 IF the player click on the restart button THEN
@@ -99,5 +99,41 @@
                 ENDIF          
 
         ENDSEQUENCE  
-//PSEUDO CODE     
+
+//PSEUDO CODE 
+
+
+
+
+
+
+SEQUENCE start_guessing USING random_number AND max_tries
+    SET guess TO 0
+    SET number_tries TO 0
+    SET answer_found TO FALSE
+    DISPLAY 'Start guessing the number now!'
+
+    WHILE number_tries IS LESS THAN max_tries
+
+        IF guess IS NOT EQUAL to random_number
+            SET guess TO READ user's input
+
+            IF guess IS NULL OR not a number 
+                DISPLAY 'Invalide input'
+            ELSE
+                INCREMENT number_tries
+
+                IF number_tries IS NOT EQUAL TO max_tries
+                    DISPLAY HIGHER IF guess IS LESS THAN random_number
+                    DISPLAY LOWER IF guess IS GREATER THAN random_number
+                ENDIF
+            ENDIF
+        ELSE
+            BREAK
+    ENDWHILE
+    SET answer_found TO TRUE IF guess IS EQUAL TO random_number      
+
+
+    
+
 
