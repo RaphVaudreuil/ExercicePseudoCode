@@ -157,7 +157,36 @@ SEQUENCE play_game WITH difficulty_level
         VeryHard :
             SET number_tries TO 9
             SET limit TO 1000
-    ENDCASE   
+    ENDCASE
+    CALL new_game WITH random_number AND max_tries RETURNING answer_found
+    RETURN random_number AND answer_found
+ENDSEQUENCE
+
+SEQUENCE 
+    SET continue_playing TO TRUE
+    DISPLAY 'Welcome to Guess The Number Game'
+
+    WHILE continue_playing
+        DISPLAY 'Please chose one difficulty level BETWEEN these 5!'
+        SET difficulty_level TO READ user's input
+        IF difficulty_level IS NOT INCLUDED in difficulty_level 
+            DISPLAY 'Invalid Input'
+            IF answer_found
+                DISPLAY 'Congraluation you are the champion!!'
+            ELSE
+                DISPLAY 'Try Again you are out of tries!!' BREAK 'The number we was looking for was : random_number'
+            DISPLAY 'Play Again' ('YES/NO')
+            SET answer TO READ user's input
+            SET continue_playing TO FALSE IF answer EQUAL TO NO
+        ENDIF
+        DISPLAY 'Thank You for playing Guess The Number'
+ENDSEQUENCE
+
+CALL main_game
+
+//RIGHT WAY TO DO PSEUDOCODE//
+
+
 
 
 
